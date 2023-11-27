@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Sneakrs Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section class="welcome-banner" style="background-image: url('background.jpg');">
+        <h1>Welcome to Sneakrs Hub</h1>
+        <p>Discover the latest and greatest shoe collections here.</p>
+        <div class="buttons">
+            <a href="login.html" class="btn">Login</a>
+            <a href="signup.html" class="btn">Sign Up</a>
+        </div>
+    </section>
+    
+    <div class="image-gallery"></div>
+
+    <script>
+        // Declare an array of image file names
+        const imageFiles = ["sneakers1.webp", "sneakers2.webp", "sneakers3.jpg"];
+
+        // Find the HTML element with the class "image-gallery" and store it in the galleryContainer variable
+        const galleryContainer = document.querySelector(".image-gallery");
+
+        // Function to add a fade-in animation to an element
+        function fadeIn(element, delay) {
+            setTimeout(() => {
+                element.classList.add("fade-in");
+            }, delay);
+        }
+
+        // Loop through each image file in the array
+        for (let i = 0; i < imageFiles.length; i++) {
+            // Create an HTML img element
+            const image = document.createElement("img");
+
+            // Set the src attribute of the img element to the current image file in the array
+            image.src = imageFiles[i];
+
+            // Set the alt attribute of the img element to describe the image (Sneaker 1, Sneaker 2, etc.)
+            image.alt = `Sneaker ${i + 1}`;
+
+            // Append the img element to the galleryContainer, adding it to the HTML
+            galleryContainer.appendChild(image);
+
+            // Apply the fade-in animation with a delay based on the index
+            fadeIn(image, i * 500); // Adjust the delay as needed
+        }
+    </script>
+</body>
+</html>

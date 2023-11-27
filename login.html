@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css">
+    <script>
+        function login() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const errorDiv = document.getElementById("error");
+
+            if (username === "user" && password === "password") {
+                errorDiv.textContent = "Login successful!";
+                errorDiv.style.color = "green";
+                window.location.href = "home.html";
+            } else {
+                errorDiv.textContent = "Invalid username or password. Please try again.";
+                errorDiv.style.color = "red";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form action="#" onsubmit="return false;">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+
+            <input type="submit" value="Login" onclick="login()">
+            <div id="error"></div>
+
+            <a href="forgot.html">Forgot Password</a>
+        </form>
+    </div>
+</body>
+</html>
